@@ -27,7 +27,7 @@ set mouse=a
 set incsearch
 set noswapfile
 
-
+nnoremap ; :
 
 imap jk <Esc>
 imap Jk <Esc>
