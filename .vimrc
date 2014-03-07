@@ -27,15 +27,14 @@ set mouse=a
 set incsearch
 set noswapfile
 
+colo slate
+
 nnoremap ; :
 
-imap jk <Esc>
+"the l is so the cursor doesn't move when I change modes
+imap jk <Esc>l
 imap Jk <Esc>
 imap JK <Esc>
-
-"this is supposed to let me go to next occurence with incsearch on.
-"sometimes it skips occurences.
-cmap <c-n> <CR>n/<c-p>
 
 "this lets me use ctrl+C to copy selection to a buffer file
 map <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
@@ -43,4 +42,10 @@ map <C-c> y:'<,'>w! ~/.vimbuffer <CR>
 map <C-p> :r ~/.vimbuffer <CR>
 
 "fast saving!
-map lkj :w <CR>
+nnoremap '; :w <CR>
+
+"fast saving in insert mode
+imap '; <Esc>:w<CR>
+
+"use enter to select from wildmenu
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
