@@ -40,7 +40,7 @@ cmap <c-n> <CR>n/<c-p>
 "this lets me use ctrl+C to copy selection to a buffer file
 map <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
 "and this lets me paste that buffer with ctrl+V
-map <C-v> :r ~/.vimbuffer <CR>
+map <C-p> :r ~/.vimbuffer <CR>
 
 "fast saving!
 map lkj :w <CR>
