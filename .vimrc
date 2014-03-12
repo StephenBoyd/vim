@@ -35,7 +35,7 @@ set pastetoggle=<F7>
 
 "pretty colors like Sublime Text. Slate is also a decent choice.
 colorscheme slate
-colorscheme molokai
+"colorscheme molokai
 
 "this changed my life.
 nnoremap ; :
