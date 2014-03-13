@@ -1,31 +1,31 @@
 set nocompatible
-set t_Co=256
+set t_Co=256 "lets vim use 256 color mode
+filetype plugin on
+filetype indent on
 syntax enable
 set expandtab
 set tabstop=2
-retab
 set number
 set autoindent
+set softtabstop=2
 set smartindent
 set shiftwidth=2 " it's the Ruby way.
-filetype indent on
+retab
 set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
 set ruler
-set softtabstop=2
 set shiftround
-filetype plugin on
 set wildmode=longest:full
 set wildmenu
 set history=1000
 set scrolloff=3
 set autochdir
 set viminfo='20,<50,s10,h,%
-set mouse=a
+set mouse=a       "enables mouse. dragging selection enters visual mode
 set incsearch
-set noswapfile "I'm never dealing with swapfiles again. I just save often
+set noswapfile    "I'm never dealing with swapfiles again. I just save often
 
 " toggles vim's paste mode; when we want to paste something into vim from a
 " different application, turning on paste mode prevents the insertion of
@@ -41,6 +41,7 @@ colorscheme slate
 nnoremap ; :
 
 "the l is so the cursor doesn't move when I change modes
+"unlike jj, typing jk in normal mode doesn't move the cursor 
 imap jk <Esc>l
 
 "this lets me use ctrl+C to copy selection to a buffer file
@@ -52,13 +53,13 @@ map <C-p> :r ~/.vimbuffer <CR>
 nnoremap '; :w <CR>
 
 "fast saving in insert mode
-imap '; <Esc>l:w<CR>
+inoremap '; <Esc>l:w <CR>
 
 "use enter to select from wildmenu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " This command will allow us to save a file we don't have permission to save
-" *after* we have already opened it. From github.com/valloris
+" *after* we have already opened it. From github.com/valloric
 cnoremap w!! w !sudo tee % >/dev/null
 
 " This makes j and k work on "screen lines" instead of on "file lines"; now,
@@ -82,3 +83,18 @@ function! EnhanceCppSyntax()
   hi def link cppFuncDef Special
 endfunction
 autocmd Syntax cpp call EnhanceCppSyntax()
+
+" Disable arrow keys in normal mode, for training.
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+
+" shift-J to scroll down. K for up.
+nnoremap <S-j> <C-e>
+nnoremap <S-k> <C-y>
+
+"L to go right a word. H to go left
+nnoremap <S-h> b
+nnoremap <S-l> w
+
