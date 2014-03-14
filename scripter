@@ -1,0 +1,14 @@
+#! /bin/sh
+
+if [ ~/.vimrc ]; then
+  echo "This script will delete your shit. Do you want to continue?"
+  read response
+  if [ 'yes' = $response ] ; then
+    rm ~/.vimrc
+  else
+    echo "ok"
+    exit 
+  fi
+fi
+
+ln ~/vim/.vimrc ~/.vimrc
