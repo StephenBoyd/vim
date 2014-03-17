@@ -1,3 +1,5 @@
+"This is aardvark, which is derived from slate
+
 "%% SiSU Vim color file
 " Slate Maintainer: Ralph Amissah <ralph@amissah.com>
 " (originally looked at desert Hans Fugal <hans@fugal.net> http://hans.fugal.net/vim/colors/desert.vim (2003/05/06)
@@ -9,7 +11,7 @@ if version > 580
  syntax reset
  endif
 endif
-let colors_name = "slater"
+let colors_name = "aardvark"
 :hi Normal guifg=White guibg=grey15
 :hi Cursor guibg=khaki guifg=slategrey
 :hi VertSplit guibg=#c2bfa5 guifg=grey40 gui=none cterm=reverse
@@ -31,14 +33,14 @@ let colors_name = "slater"
 :hi String guifg=SkyBlue ctermfg=darkcyan
 :hi Comment term=bold ctermfg=11 guifg=grey40
 :hi Constant guifg=#ffa0a0 ctermfg=brown
-:hi Special guifg=darkkhaki ctermfg=brown
+:hi Special guifg=darkkhaki ctermfg=red
 :hi Identifier guifg=salmon ctermfg=red
 :hi Include guifg=red ctermfg=red
 :hi PreProc guifg=red guibg=white ctermfg=red
 :hi Operator guifg=Red ctermfg=Red
 :hi Define guifg=gold gui=bold ctermfg=yellow
 :hi Type guifg=CornflowerBlue ctermfg=2
-:hi Function guifg=navajowhite ctermfg=brown
+:hi Function guifg=navajowhite ctermfg=red
 :hi Structure guifg=green ctermfg=green
 :hi LineNr guifg=grey50 ctermfg=3
 :hi Ignore guifg=grey40 cterm=bold ctermfg=7

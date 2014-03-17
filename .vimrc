@@ -35,7 +35,7 @@ set pastetoggle=<F7>
 
 "pretty colors like Sublime Text. Slate is also a decent choice.
 colorscheme slate
-"colorscheme molokai
+colorscheme monkey
 
 "this changed my life.
 nnoremap ; :
@@ -96,7 +96,35 @@ nnoremap <Right> <nop>
 nnoremap <S-j> <C-e>
 nnoremap <S-k> <C-y>
 
-"L to go right a word. H to go left
+"shift-L to go right a word. shift-H to go left
 nnoremap <S-h> b
 nnoremap <S-l> w
 
+" space 4 to go to end of line. space 3 to go to beginning
+nnoremap <Space>4 $
+nnoremap <Space>3 0
+
+" space 0, space 9, space 8 to go to top, middle, or bottom of page
+" respectively
+nnoremap <Space>0 H
+nnoremap <Space>9 M
+nnoremap <Space>8 L
+
+
+
+
+
+"the next 3 changes are for displaying the syntax group of the
+"word under the cursor. helpful when making a colorscheme.
+" adds to statusline
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}
+
+" a little more informative version of the above
+nmap <C-S-P> :call <SID>SynStack()<CR>
+
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc

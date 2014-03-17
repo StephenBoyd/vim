@@ -1,5 +1,5 @@
 
-" Vim color file
+" Vim color file for monkey colorscheme
 "
 " Author: Tomas Restrepo <tomas@winterdom.com>
 "
