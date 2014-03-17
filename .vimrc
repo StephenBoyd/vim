@@ -53,7 +53,7 @@ map <C-p> :r ~/.vimbuffer <CR>
 nnoremap '; :w <CR>
 
 "fast saving in insert mode
-inoremap '; <Esc>l:w <CR>
+inoremap '; <Esc>:w <CR>l
 
 "use enter to select from wildmenu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -77,7 +77,9 @@ function! s:HighlightFunctionsAndClasses()
 endfunction
 autocmd Syntax * call s:HighlightFunctionsAndClasses()
 
+
 " Different highlighting for function definition in C++
+" This doesn't work right now.
 function! EnhanceCppSyntax()
   syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?$"
   hi def link cppFuncDef Special
