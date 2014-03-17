@@ -12,3 +12,7 @@ if [ ~/.vimrc ]; then
 fi
 
 ln ~/vim/.vimrc ~/.vimrc
+
+# the .vimrc is updated instantly,
+# but you'll have to run this every time you update the colors.
+cp -R colors ~/.vim/
