@@ -11,9 +11,6 @@ set softtabstop=2
 set smartindent
 set shiftwidth=2 " it's the Ruby way.
 retab
-set nohlsearch
-set incsearch
-set ignorecase
 set smartcase
 set ruler
 set shiftround
@@ -25,6 +22,8 @@ set autochdir
 set viminfo='20,<50,s10,h,%
 set mouse=a       "enables mouse. dragging selection enters visual mode
 set incsearch
+set ignorecase
+set nohlsearch
 set noswapfile    "I'm never dealing with swapfiles again. I just save often
 
 " toggles vim's paste mode; when we want to paste something into vim from a
@@ -92,17 +91,21 @@ nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
-" shift-J to scroll down. K for up.
-nnoremap <S-j> <C-e>
-nnoremap <S-k> <C-y>
+" ctrl-J to scroll down. K for up.
+nnoremap <C-j> 3<C-e>
+nnoremap <C-k> 3<C-y>
+
+" shift-J to move cursor down 3 lines. K for up.
+nnoremap <S-j> 3j
+nnoremap <S-k> 3k
 
 "shift-L to go right a word. shift-H to go left
 nnoremap <S-h> b
 nnoremap <S-l> w
 
 " space 4 to go to end of line. space 3 to go to beginning
-nnoremap <Space>4 $
-nnoremap <Space>3 0
+nnoremap <C-j> $
+nnoremap <C-l> 0
 
 " space 0, space 9, space 8 to go to top, middle, or bottom of page
 " respectively
@@ -117,14 +120,12 @@ nnoremap <Space>8 L
 "the next 3 changes are for displaying the syntax group of the
 "word under the cursor. helpful when making a colorscheme.
 " adds to statusline
-set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}
-
+"set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}
 " a little more informative version of the above
-nmap <C-S-P> :call <SID>SynStack()<CR>
-
-function! <SID>SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+"nmap <C-S-P> :call <SID>SynStack()<CR>
+"function! <SID>SynStack()
+"    if !exists("*synstack")
+"        return
+"    endif
+"    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+"endfunc
