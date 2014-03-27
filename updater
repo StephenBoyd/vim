@@ -2,6 +2,7 @@
 
 if [ ~/.vimrc ]; then
   echo "This script will delete your shit. Do you want to continue?"
+  echo "Say 'yes'"
   read response
   if [ 'yes' = $response ] ; then
     rm ~/.vimrc
@@ -11,8 +12,9 @@ if [ ~/.vimrc ]; then
   fi
 fi
 
+git pull
 ln ~/vim/.vimrc ~/.vimrc
 
 # the .vimrc is updated instantly,
 # but you'll have to run this every time you update the colors.
-cp -R colors ~/.vim/
+cp -R colors ~/.vim/colors/
