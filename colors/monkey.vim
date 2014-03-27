@@ -9,7 +9,8 @@
 " by Hamish Stuart Macpherson
 "
 " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-"
+" The background color I want isn't one of the 256 colors, so
+" I set it in my xfce terminal emulator instead of here
 
 hi clear
 
@@ -33,12 +34,12 @@ if &t_Co > 255
   "ctermbg=235
   hi CursorLine               ctermbg=234   cterm=none
   hi CursorLineNr ctermfg=208               cterm=none
-  hi Boolean         ctermfg=135
+  hi Boolean         ctermfg=141
   hi Character       ctermfg=152
-  hi Number          ctermfg=135
+  hi Number          ctermfg=141
   hi String          ctermfg=185
-  hi Conditional     ctermfg=197               cterm=bold
-  hi Constant        ctermfg=135               cterm=bold
+  hi Conditional     ctermfg=203               cterm=bold
+  hi Constant        ctermfg=141               cterm=bold
   hi Cursor          ctermfg=16  ctermbg=253
   hi Debug           ctermfg=225               cterm=bold
   hi Define          ctermfg=81
@@ -53,7 +54,7 @@ if &t_Co > 255
   hi Error           ctermfg=219 ctermbg=89
   hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
   hi Exception       ctermfg=112               cterm=bold
-  hi Float           ctermfg=135
+  hi Float           ctermfg=141
   hi FoldColumn      ctermfg=67  ctermbg=16
   hi Folded          ctermfg=67  ctermbg=16
   hi Function        ctermfg=112
@@ -61,7 +62,7 @@ if &t_Co > 255
   hi Ignore          ctermfg=244 ctermbg=232
   hi IncSearch       ctermfg=193 ctermbg=16
 
-  hi keyword         ctermfg=197               cterm=bold
+  hi keyword         ctermfg=203               cterm=bold
   hi Label           ctermfg=229               cterm=none
   hi LineNr         ctermfg=3 
   "ctermbg=235
@@ -71,7 +72,7 @@ if &t_Co > 255
   hi MatchParen      ctermfg=208  ctermbg=233 cterm=bold
   hi ModeMsg         ctermfg=229
   hi MoreMsg         ctermfg=229
-  hi Operator        ctermfg=197
+  hi Operator        ctermfg=203
 
   " complete menu
   hi Pmenu           ctermfg=81  ctermbg=16
@@ -82,12 +83,12 @@ if &t_Co > 255
   hi PreCondit       ctermfg=112               cterm=bold
   hi PreProc         ctermfg=112
   hi Question        ctermfg=81
-  hi Repeat          ctermfg=197               cterm=bold
+  hi Repeat          ctermfg=203               cterm=bold
   hi Search          ctermfg=253 ctermbg=66
 
   " marks column
   hi SignColumn      ctermfg=112 ctermbg=240
-  hi SpecialChar     ctermfg=197               cterm=bold
+  hi SpecialChar     ctermfg=203               cterm=bold
   hi SpecialComment  ctermfg=245               cterm=bold
   hi Special         ctermfg=81
   if has("spell")
@@ -96,12 +97,12 @@ if &t_Co > 255
       hi SpellLocal              ctermbg=17
       hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
   endif
-  hi Statement       ctermfg=197               cterm=bold
+  hi Statement       ctermfg=203               cterm=bold
   hi StatusLine      ctermfg=238 ctermbg=253
   hi StatusLineNC    ctermfg=244 ctermbg=232
   hi StorageClass    ctermfg=208
   hi Structure       ctermfg=81
-  hi Tag             ctermfg=197
+  hi Tag             ctermfg=203
   hi Title           ctermfg=166
   hi Todo            ctermfg=231 ctermbg=232   cterm=bold
 
@@ -121,5 +122,5 @@ if &t_Co > 255
   hi NonText         ctermfg=59
 
   hi SpecialKey      ctermfg=59
-  hi Include        ctermfg=197
+  hi Include        ctermfg=203
 end

@@ -63,7 +63,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 
 " This makes j and k work on "screen lines" instead of on "file lines"; now,
 " when we have a long line that wraps to multiple screen lines, j and k behave
-" as we expect them to.
+" as I expect them to.
 nnoremap j gj
 nnoremap k gk
 
@@ -113,7 +113,11 @@ nnoremap <Space>0 H
 nnoremap <Space>9 M
 nnoremap <Space>8 L
 
-
+"Ctrl-Up to increment number under the curser.
+"Ctrl-Down to decrement
+"I use screen a lot, so Ctrl-A is a problem.
+nnoremap <C-Up> <C-A>
+nnoremap <C-Down> <C-X>
 
 
 
