@@ -36,7 +36,7 @@ if &t_Co > 255
   hi CursorLineNr ctermfg=208               cterm=none
   hi Boolean         ctermfg=141
   hi Character       ctermfg=152
-  hi Number          ctermfg=141
+  hi Number          ctermfg=white
   hi String          ctermfg=185
   hi Conditional     ctermfg=13               cterm=bold
   hi Constant        ctermfg=141               cterm=bold
