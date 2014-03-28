@@ -38,7 +38,7 @@ if &t_Co > 255
   hi Character       ctermfg=152
   hi Number          ctermfg=141
   hi String          ctermfg=185
-  hi Conditional     ctermfg=203               cterm=bold
+  hi Conditional     ctermfg=13               cterm=bold
   hi Constant        ctermfg=141               cterm=bold
   hi Cursor          ctermfg=16  ctermbg=253
   hi Debug           ctermfg=225               cterm=bold
@@ -62,7 +62,7 @@ if &t_Co > 255
   hi Ignore          ctermfg=244 ctermbg=232
   hi IncSearch       ctermfg=193 ctermbg=16
 
-  hi keyword         ctermfg=203               cterm=bold
+  hi keyword         ctermfg=13               cterm=bold
   hi Label           ctermfg=229               cterm=none
   hi LineNr         ctermfg=3 
   "ctermbg=235
@@ -72,7 +72,7 @@ if &t_Co > 255
   hi MatchParen      ctermfg=208  ctermbg=233 cterm=bold
   hi ModeMsg         ctermfg=229
   hi MoreMsg         ctermfg=229
-  hi Operator        ctermfg=203
+  hi Operator        ctermfg=13
 
   " complete menu
   hi Pmenu           ctermfg=81  ctermbg=16
@@ -83,12 +83,12 @@ if &t_Co > 255
   hi PreCondit       ctermfg=112               cterm=bold
   hi PreProc         ctermfg=112
   hi Question        ctermfg=81
-  hi Repeat          ctermfg=203               cterm=bold
+  hi Repeat          ctermfg=13               cterm=bold
   hi Search          ctermfg=253 ctermbg=66
 
   " marks column
   hi SignColumn      ctermfg=112 ctermbg=240
-  hi SpecialChar     ctermfg=203               cterm=bold
+  hi SpecialChar     ctermfg=13               cterm=bold
   hi SpecialComment  ctermfg=245               cterm=bold
   hi Special         ctermfg=81
   if has("spell")
@@ -97,12 +97,12 @@ if &t_Co > 255
       hi SpellLocal              ctermbg=17
       hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
   endif
-  hi Statement       ctermfg=203               cterm=bold
+  hi Statement       ctermfg=13               cterm=bold
   hi StatusLine      ctermfg=238 ctermbg=253
   hi StatusLineNC    ctermfg=244 ctermbg=232
   hi StorageClass    ctermfg=208
   hi Structure       ctermfg=81
-  hi Tag             ctermfg=203
+  hi Tag             ctermfg=13
   hi Title           ctermfg=166
   hi Todo            ctermfg=231 ctermbg=232   cterm=bold
 
@@ -122,5 +122,5 @@ if &t_Co > 255
   hi NonText         ctermfg=59
 
   hi SpecialKey      ctermfg=59
-  hi Include        ctermfg=203
+  hi Include        ctermfg=13
 end

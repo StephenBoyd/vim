@@ -10,10 +10,10 @@ set autoindent
 set softtabstop=2
 set smartindent
 set shiftwidth=2 " it's the Ruby way.
+set shiftround
 retab
 set smartcase
 set ruler
-set shiftround
 set wildmode=longest:full
 set wildmenu
 set history=1000
@@ -91,9 +91,9 @@ nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
-" ctrl-J to scroll down. K for up.
-nnoremap <C-j> 3<C-e>
-nnoremap <C-k> 3<C-y>
+" alt-J to scroll down. K for up.
+nnoremap <M-j> 3<C-e>
+nnoremap <M-k> 3<C-y>
 
 " shift-J to move cursor down 3 lines. K for up.
 nnoremap <S-j> 3j
@@ -119,7 +119,15 @@ nnoremap <Space>8 L
 nnoremap <C-Up> <C-A>
 nnoremap <C-Down> <C-X>
 
-
+"Disabling mouse for moving the cursor,
+"because the habit's been slowing me down.
+"replace it with a global search for function definition,
+"which should only work with cscope or ctags
+"right-click goes to a list of all references to the token.
+nnoremap <LeftMouse> :scs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <RightMouse> :scs find s <C-R>=expand("<cword>")<CR><CR>
+inoremap <LeftMouse> <nop>
+inoremap <RightMouse> <nop>
 
 "the next 3 changes are for displaying the syntax group of the
 "word under the cursor. helpful when making a colorscheme.
