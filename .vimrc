@@ -124,10 +124,10 @@ nnoremap <C-Down> <C-X>
 "replace it with a global search for function definition,
 "which should only work with cscope or ctags
 "right-click goes to a list of all references to the token.
-nnoremap <LeftMouse> <nop> 
 nnoremap <RightMouse> <nop>
 inoremap <LeftMouse> <nop>
 inoremap <RightMouse> <nop>
+nnoremap <LeftMouse> <nop>
 
 "the next 3 changes are for displaying the syntax group of the
 "word under the cursor. helpful when making a colorscheme.
