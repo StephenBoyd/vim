@@ -100,8 +100,59 @@ nnoremap <S-j> 3j
 nnoremap <S-k> 3k
 
 "shift-L to go right a word. shift-H to go left
-nnoremap <S-h> b
-nnoremap <S-l> w
+nnoremap <S-h> et nocompatible
+set t_Co=256 "lets vim use 256 color mode
+filetype plugin on
+filetype indent on
+syntax enable
+set expandtab
+set tabstop=2
+set number
+set autoindent
+set softtabstop=2
+set smartindent
+set shiftwidth=2 " it's the Ruby way.
+set shiftround
+retab
+set smartcase
+set ruler
+set wildmode=longest:full
+set wildmenu
+set history=1000
+set scrolloff=3
+set autochdir
+set viminfo='20,<50,s10,h,%
+set mouse=a       "enables mouse. dragging selection enters visual mode
+set incsearch
+set ignorecase
+set nohlsearch
+set noswapfile    "I'm never dealing with swapfiles again. I just save often
+
+" toggles vim's paste mode; when we want to paste something into vim from a
+" different application, turning on paste mode prevents the insertion of
+" extra
+" whitespace
+set pastetoggle=<F7>
+
+"pretty colors like Sublime Text. Slate is also a decent choice.
+colorscheme slate
+colorscheme monkey
+
+"this changed my life.
+nnoremap ; :
+
+"the l is so the cursor doesn't move when I change modes
+"unlike jj, typing 
+n normal mode doesn't move the cursor 
+c>l
+
+"this lets me use alt+C to copy selection to a buffer file
+map <A-c> y:'<,'>w! ~/.vimbuffer <CR> 
+"and this lets me paste that buffer with alt+V
+map <A-v> :r ~/.vimbuffer <CR>
+ 
+"fast saving!
+nnoremap nomap nnoremap <S-l> w
 
 " ctrl-l  to go to end of line. ctrl- h to go to beginning
 nnoremap <C-l> $
