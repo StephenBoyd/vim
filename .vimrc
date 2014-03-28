@@ -41,7 +41,7 @@ nnoremap ; :
 
 "the l is so the cursor doesn't move when I change modes
 "unlike jj, typing jk in normal mode doesn't move the cursor 
-inomap jk <Esc>l
+inoremap jk <Esc>l
 
 "this lets me use alt+C to copy selection to a buffer file
 map <A-c> y:'<,'>w! ~/.vimbuffer <CR> 
