@@ -44,9 +44,9 @@ nnoremap ; :
 inoremap jk <Esc>l
 
 "this lets me use alt+C to copy selection to a buffer file
-map <A-c> y:'<,'>w! ~/.vimbuffer <CR> 
+nnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
 "and this lets me paste that buffer with alt+V
-map <A-v> :r ~/.vimbuffer <CR>
+nnoremap <C-v> :r ~/.vimbuffer <CR>
  
 "fast saving!
 nnoremap '; :w <CR>
