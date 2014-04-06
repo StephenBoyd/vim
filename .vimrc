@@ -43,8 +43,9 @@ nnoremap ; :
 "unlike jj, typing jk in normal mode doesn't move the cursor 
 inoremap jk <Esc>l
 
-"this lets me use alt+C to copy selection to a buffer file
+"this lets me use ctrl+C to copy selection to a buffer file
 nnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
+vnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
 "and this lets me paste that buffer with alt+V
 nnoremap <C-v> :r ~/.vimbuffer <CR>
  
