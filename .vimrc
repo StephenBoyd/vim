@@ -1,4 +1,18 @@
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+" Plugins. Place between here are filetype plugin indent on
+
 set t_Co=256 "lets vim use 256 color mode
 filetype plugin on
 filetype indent on
