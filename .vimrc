@@ -1,4 +1,18 @@
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+
+" Plugins. Place between here are filetype plugin indent on
+
 set t_Co=256 "lets vim use 256 color mode
 filetype plugin on
 filetype indent on
@@ -43,10 +57,18 @@ nnoremap ; :
 "unlike jj, typing jk in normal mode doesn't move the cursor 
 inoremap jk <Esc>l
 
+<<<<<<< HEAD
 "this lets me use alt+C to copy selection to a buffer file
 map <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
 "and this lets me paste that buffer with alt+V
 map <C-v> :r ~/.vimbuffer <CR>
+=======
+"this lets me use ctrl+C to copy selection to a buffer file
+nnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
+vnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
+"and this lets me paste that buffer with ctrl+V
+nnoremap <C-p> :r ~/.vimbuffer <CR>
+>>>>>>> 5df6bbcf334b218ca4edb2e476f11cc56adbaca3
  
 "fast saving!
 nnoremap '; :w <CR>
