@@ -1,13 +1,13 @@
 #! /bin/sh
 
-if [ ~/.vimrc ]; then
+if [ -e ~/.vimrc ]; then
   echo "This script will delete your shit. Do you want to continue?"
   echo "Say 'yes'"
   read response
   if [ 'yes' = $response ] ; then
     rm ~/.vimrc
   else
-    echo "ok"
+    echo "OK. Nothing happened."
     exit 
   fi
 fi
@@ -18,6 +18,21 @@ ln ~/vim/.vimrc ~/.vimrc
 # the .vimrc is updated instantly,
 # but you'll have to run this every time you update the colors.
 
-mkdir ~/.vim/colors
+if [ ! -d ~/.vim ]
+  then
+    mkdir ~/.vim
+fi
+
+if [ ! -d ~/.vim/bundle/vundle ]
+  then
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
+if [ ! -d ~/.vim/colors ]
+  then
+    mkdir ~/.vim/colors
+fi
 
 cp -R ./colors/* ~/.vim/colors/
+
+echo "Your .vimrc has been updated"
