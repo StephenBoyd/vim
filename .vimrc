@@ -57,18 +57,11 @@ nnoremap ; :
 "unlike jj, typing jk in normal mode doesn't move the cursor 
 inoremap jk <Esc>l
 
-<<<<<<< HEAD
-"this lets me use alt+C to copy selection to a buffer file
-map <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
-"and this lets me paste that buffer with alt+V
-map <C-v> :r ~/.vimbuffer <CR>
-=======
 "this lets me use ctrl+C to copy selection to a buffer file
 nnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
 vnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR> 
 "and this lets me paste that buffer with ctrl+V
 nnoremap <C-p> :r ~/.vimbuffer <CR>
->>>>>>> 5df6bbcf334b218ca4edb2e476f11cc56adbaca3
  
 "fast saving!
 nnoremap '; :w <CR>
@@ -120,14 +113,20 @@ nnoremap <A-k> 3<C-y>
 " shift-J to move cursor down 3 lines. K for up.
 nnoremap <S-j> 3j
 nnoremap <S-k> 3k
+vnoremap <S-j> 3j
+vnoremap <S-k> 3k
 
 "shift-L to go right a word. shift-H to go left
 nnoremap <S-h> b
 nnoremap <S-l> w
+vnoremap <S-h> b
+vnoremap <S-l> w
 
 " ctrl-l  to go to end of line. ctrl- h to go to beginning
 nnoremap <C-l> $
 nnoremap <C-h> 0
+vnoremap <C-l> $
+vnoremap <C-h> 0
 
 " space 0, space 9, space 8 to go to top, middle, or bottom of page
 " respectively
@@ -135,11 +134,12 @@ nnoremap <Space>0 H
 nnoremap <Space>9 M
 nnoremap <Space>8 L
 
-"Ctrl-Up to increment number under the curser.
-"Ctrl-Down to decrement
+"Since I disabled the up and down keys anyway...
+"Up to increment number under the curser.
+"Down to decrement
 "I use screen a lot, so Ctrl-A is a problem.
-nnoremap <C-Up> <C-A>
-nnoremap <C-Down> <C-X>
+nnoremap <Up> <C-A>
+nnoremap <Down> <C-X>
 
 "Disabling mouse for moving the cursor,
 "because the habit's been slowing me down.
