@@ -12,12 +12,31 @@ let path = '~/some/path/here'
 Plugin 'gmarik/vundle'
 
 " Plugins. Place between here are filetype plugin indent on
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-sleuth'
+Plugin 'fatih/vim-go'
+
+
+"
+"syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint']
+
 
 set t_Co=256 "lets vim use 256 color mode
 filetype plugin on
 filetype indent on
 syntax enable
-set expandtab
+set noexpandtab
 set tabstop=2
 set number
 set autoindent
@@ -163,3 +182,4 @@ nnoremap <LeftMouse> <nop>
 "    endif
 "    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 "endfunc
+"
