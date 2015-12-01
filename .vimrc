@@ -37,12 +37,11 @@ filetype plugin on
 filetype indent on
 syntax enable
 set noexpandtab
-set tabstop=2
 set number
+set shiftwidth=4
+set tabstop=4
 set autoindent
-set softtabstop=2
 set smartindent
-set shiftwidth=2 " it's the Ruby way.
 set shiftround
 retab
 set smartcase
