@@ -10,7 +10,7 @@
 "
 " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 " The background color I want isn't one of the 256 colors, so
-" I set it in my xfce terminal emulator instead of here
+" I set it in my terminal emulator instead of here
 
 hi clear
 
@@ -116,7 +116,7 @@ if &t_Co > 255
   hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
   hi WildMenu        ctermfg=81  ctermbg=16
 
-  hi Comment         ctermfg=65
+  hi Comment         ctermfg=239
   hi CursorColumn                ctermbg=236
   hi ColorColumn                 ctermbg=236
   hi NonText         ctermfg=59
