@@ -2,20 +2,21 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-" alternatively, pass a path where Vundle should install plugins
-let path = '~/some/path/here'
-"call vundle#rc(path)
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins. Place between here are filetype plugin indent on
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-sleuth'
 Plugin 'fatih/vim-go'
+Plugin 'pangloss/vim-javascript'
+Plugin 'pmsorhaindo/syntastic-local-eslint.vim'
+Plugin 'tpope/vim-sleuth'
+Plugin 'scrooloose/syntastic'
+
+call vundle#end()
+filetype plugin indent on
 
 
 "
@@ -29,7 +30,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 set t_Co=256 "lets vim use 256 color mode
