@@ -13,7 +13,10 @@ Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pmsorhaindo/syntastic-local-eslint.vim'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/syntastic'
+Plugin 'ruanyl/vim-fixmyjs'
 
 call vundle#end()
 filetype plugin indent on
@@ -27,15 +30,14 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-
 let g:syntastic_javascript_checkers = ['eslint']
+
+"let g:fixmyjs_engine = 'eslint'
 
 
 set t_Co=256 "lets vim use 256 color mode
-filetype plugin on
-filetype indent on
 syntax enable
 set noexpandtab
 set number
@@ -83,10 +85,10 @@ vnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR>
 nnoremap <C-p> :r ~/.vimbuffer <CR>
  
 "fast saving!
-nnoremap '; :w <CR>
+nnoremap ';lk :w <CR>
 
 "fast saving in insert mode
-inoremap '; <Esc>:w <CR>l
+inoremap ';lk <Esc>:w <CR>l
 
 "use enter to select from wildmenu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -182,4 +184,7 @@ nnoremap <LeftMouse> <nop>
 "    endif
 "    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 "endfunc
-"
+
+" https://andrew.stwrt.ca/posts/project-specific-vimrc/
+set exrc
+set secure
