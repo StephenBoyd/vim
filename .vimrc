@@ -87,9 +87,6 @@ nnoremap <C-p> :r ~/.vimbuffer <CR>
 "fast saving!
 nnoremap ';lk :w <CR>
 
-"fast saving in insert mode
-inoremap ';lk <Esc>:w <CR>l
-
 "use enter to select from wildmenu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
