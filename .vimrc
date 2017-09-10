@@ -2,24 +2,31 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" alternatively, pass a path where Vundle should install plugins
+let path = '~/some/path/here'
+" call vundle#rc(path)
+
+" github.com/Shutnik/jshint2.vim
+set runtimepath+=~/.vim/bundle/jshint2.vim/
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'gmarik/vundle'
 
 " Plugins. Place between here are filetype plugin indent on
+Plugin 'scrooloose/syntastic'
 Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'pmsorhaindo/syntastic-local-eslint.vim'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'scrooloose/syntastic'
-Plugin 'ruanyl/vim-fixmyjs'
+Plugin 'sophacles/vim-processing'
+Plugin 'plasticboy/vim-markdown'
+"Plugin 'godlygeek/tabular'
 
 call vundle#end()
-filetype plugin indent on
 
 
 "
@@ -33,11 +40,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-
-"let g:fixmyjs_engine = 'eslint'
+let g:syntastic_loc_list_height = 4
 
 
 set t_Co=256 "lets vim use 256 color mode
+filetype plugin on
+filetype indent on
 syntax enable
 set noexpandtab
 set number
@@ -85,7 +93,7 @@ vnoremap <C-c> y:'<,'>w! ~/.vimbuffer <CR>
 nnoremap <C-p> :r ~/.vimbuffer <CR>
  
 "fast saving!
-nnoremap ';lk :w <CR>
+nnoremap '; :w <CR>
 
 "use enter to select from wildmenu
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -110,13 +118,6 @@ endfunction
 autocmd Syntax * call s:HighlightFunctionsAndClasses()
 
 
-" Different highlighting for function definition in C++
-" This doesn't work right now.
-function! EnhanceCppSyntax()
-  syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?$"
-  hi def link cppFuncDef Special
-endfunction
-autocmd Syntax cpp call EnhanceCppSyntax()
 
 " Disable arrow keys in normal mode, for training.
 nnoremap <Up> <nop>
@@ -127,18 +128,6 @@ nnoremap <Right> <nop>
 " alt-J to scroll down. K for up.
 nnoremap <A-j> 3<C-e>
 nnoremap <A-k> 3<C-y>
-
-" shift-J to move cursor down 3 lines. K for up.
-nnoremap <S-j> 3j
-nnoremap <S-k> 3k
-vnoremap <S-j> 3j
-vnoremap <S-k> 3k
-
-"shift-L to go right a word. shift-H to go left
-nnoremap <S-h> b
-nnoremap <S-l> w
-vnoremap <S-h> b
-vnoremap <S-l> w
 
 " ctrl-l  to go to end of line. ctrl- h to go to beginning
 nnoremap <C-l> $
@@ -181,6 +170,12 @@ nnoremap <LeftMouse> <nop>
 "    endif
 "    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 "endfunc
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=2        
 
 " https://andrew.stwrt.ca/posts/project-specific-vimrc/
 set exrc
