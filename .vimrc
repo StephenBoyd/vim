@@ -55,7 +55,6 @@ set autoindent
 set smartindent
 set shiftround
 retab
-set smartcase
 set ruler
 set wildmode=longest:full
 set wildmenu
@@ -66,6 +65,7 @@ set viminfo='20,<50,s10,h,%
 set mouse=a       "enables mouse. dragging selection enters visual mode
 set incsearch
 set ignorecase
+set smartcase
 set nohlsearch
 set noswapfile    "I'm never dealing with swapfiles again. I just save often
 
@@ -107,17 +107,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 " as I expect them to.
 nnoremap j gj
 nnoremap k gk
-
-" Highlight Class and Function names
-function! s:HighlightFunctionsAndClasses()
-  syn match cCustomFunc      "\w\+\s*\((\)\@="
-  syn match cCustomClass     "\w\+\s*\(::\)\@="
-  hi def link cCustomFunc      Function
-  hi def link cCustomClass     Function
-endfunction
-autocmd Syntax * call s:HighlightFunctionsAndClasses()
-
-
 
 " Disable arrow keys in normal mode, for training.
 nnoremap <Up> <nop>
